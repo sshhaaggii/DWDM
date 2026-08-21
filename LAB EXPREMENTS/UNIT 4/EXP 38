@@ -1,0 +1,25 @@
+# EXP-38: Diabetes Prediction using Decision Tree vs SVM in WEKA
+
+======================================================================
+  EXPERIMENT 38: DECISION TREE (J48) VS SVM (SMO) FOR DIABETES PREDICTION
+======================================================================
+
+1. OBJECTIVE:
+   To evaluate J48 Decision Tree vs Support Vector Machine (SMO) for diabetes 
+   diagnosis prediction in WEKA.
+
+2. WEKA EVALUATION SUMMARY:
+======================================================================
+=== J48 Decision Tree Classifier ===
+Correctly Classified Instances: 157 / 200 (78.50 %)
+Precision: 0.781, Recall: 0.785, F1-Score: 0.778
+
+=== SVM (SMO Classifier) ===
+Correctly Classified Instances: 163 / 200 (81.50 %)
+Precision: 0.814, Recall: 0.815, F1-Score: 0.812
+
+Confusion Matrix (SVM):
+  a    b    <-- classified as
+ 118  12    | a = Negative
+  25  45    | b = Positive
+======================================================================
