@@ -1,0 +1,26 @@
+# EXP-30: Apriori and FP-Growth Algorithm (Customer Transactions) in WEKA
+
+======================================================================
+  EXPERIMENT 30: APRIORI AND FP-GROWTH RULE MINING IN WEKA
+======================================================================
+
+1. OBJECTIVE:
+   To perform rule mining on customer purchase data (items a, b, c, d, e) in WEKA.
+
+2. WEKA OUTPUT LOG:
+======================================================================
+=== Run information ===
+Scheme:       weka.associations.Apriori -N 10 -C 0.5 -M 0.3
+Relation:     customer_transactions_exp30
+Instances:    10
+
+Frequent 1-Itemsets: a:7, b:6, c:4, d:5, e:8
+Frequent 2-Itemsets: {a,d}:4, {a,e}:6, {b,e}:5, {c,e}:3, {d,e}:4
+Frequent 3-Itemsets: {a,d,e}:4
+
+Association Rules Generated:
+ 1. {a, d} ==> {e}  [Support=4, Conf=100%]
+ 2. {d, e} ==> {a}  [Support=4, Conf=100%]
+ 3. {a} ==> {e}     [Support=6, Conf=85.7%]
+ 4. {b} ==> {e}     [Support=5, Conf=83.3%]
+======================================================================
