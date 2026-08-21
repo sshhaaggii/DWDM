@@ -1,0 +1,19 @@
+# EXP-44: MONKEY/DONKEY Apriori vs FP-Growth Metarule Analysis in WEKA
+
+======================================================================
+  EXPERIMENT 44: APRIORI VS FP-GROWTH METARULE ANALYSIS IN WEKA
+======================================================================
+
+1. OBJECTIVE:
+   To formulate metarule patterns P(x, Y) ^ Q(x, W) => R(x, Z) in WEKA for the 
+   MONKEY/DONKEY transaction dataset.
+
+2. WEKA METARULE OUTPUT LOG:
+======================================================================
+Metarule Format: has_item(T, item1) ^ has_item(T, item2) => has_item(T, item3)
+
+Extracted Association Metarules (min_sup = 2, min_conf = 80%):
+ 1. has_item(T, 'O') ^ has_item(T, 'K') => has_item(T, 'E') [Conf = 100%]
+ 2. has_item(T, 'N') ^ has_item(T, 'K') => has_item(T, 'E') [Conf = 100%]
+ 3. has_item(T, 'M') ^ has_item(T, 'E') => has_item(T, 'K') [Conf = 100%]
+======================================================================
