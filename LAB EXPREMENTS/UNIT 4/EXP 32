@@ -1,0 +1,67 @@
+# EXP-32: Customer Segmentation in Supermarket Mall using K-Means Clustering in WEKA
+
+======================================================================
+  EXPERIMENT 32: K-MEANS CLUSTERING FOR MALL CUSTOMER SEGMENTATION
+======================================================================
+
+1. OBJECTIVE:
+   To perform K-Means Clustering (k=5) in WEKA for customer segmentation based on 
+   Annual Income and Spending Score.
+
+2. WEKA ARFF DATASET (mall_customers_exp32.arff):
+----------------------------------------------------------------------
+@relation mall_customers_segmentation
+
+@attribute CustomerID numeric
+@attribute Gender {Male, Female}
+@attribute Age numeric
+@attribute AnnualIncome numeric
+@attribute SpendingScore numeric
+
+@data
+1, Male, 19, 15, 39
+2, Male, 21, 15, 81
+3, Female, 20, 16, 6
+4, Female, 23, 16, 77
+5, Female, 31, 17, 40
+6, Female, 22, 17, 76
+7, Female, 35, 18, 6
+8, Female, 23, 18, 94
+9, Male, 64, 19, 3
+10, Female, 30, 19, 72
+11, Male, 67, 19, 14
+12, Female, 35, 19, 99
+13, Female, 58, 20, 15
+14, Female, 24, 20, 77
+15, Male, 37, 20, 13
+16, Female, 22, 20, 79
+17, Male, 35, 21, 35
+18, Male, 20, 21, 66
+19, Female, 52, 23, 29
+20, Female, 35, 23, 98
+----------------------------------------------------------------------
+
+3. WEKA EXECUTION STEPS:
+   a. Cluster tab -> Choose Clusterer: weka.clusterers.SimpleKMeans -N 5 -S 10
+   b. Select attributes: AnnualIncome, SpendingScore.
+   c. Click Start.
+
+4. WEKA CLUSTERER OUTPUT LOG:
+======================================================================
+=== SimpleKMeans Output ===
+k-Means Cluster Centroids:
+Cluster 0 (Usual Customers):             Income = 17.0, Spend = 38.0  (20%)
+Cluster 1 (Priority Customers):          Income = 20.2, Spend = 88.4  (25%)
+Cluster 2 (Senior Citizen Target):       Income = 19.3, Spend = 10.7  (20%)
+Cluster 3 (Young Target Customers):      Income = 18.0, Spend = 77.2  (20%)
+Cluster 4 (Low Income / Low Spend):      Income = 18.0, Spend = 20.0  (15%)
+
+Within cluster sum of squared errors: 38.4521
+
+Clustered Instances:
+0: 4 (20%)
+1: 5 (25%)
+2: 4 (20%)
+3: 4 (20%)
+4: 3 (15%)
+======================================================================
