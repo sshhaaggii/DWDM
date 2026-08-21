@@ -1,0 +1,30 @@
+# EXP-34: Naive Bayes vs SVM Classification & Model Summary Comparison in WEKA
+
+======================================================================
+  EXPERIMENT 34: NAIVE BAYES VS SUPPORT VECTOR MACHINE (SMO) IN WEKA
+======================================================================
+
+1. OBJECTIVE:
+   To compare classification performance between Naive Bayes and Support Vector 
+   Machine (SMO classifier) in WEKA.
+
+2. WEKA EXECUTION RESULTS:
+======================================================================
+=== Naive Bayes Output ===
+Correctly Classified Instances: 144 / 150 (96.00 %)
+Kappa statistic: 0.9400
+Mean absolute error: 0.0342
+
+=== Support Vector Machine (SMO) Output ===
+Correctly Classified Instances: 145 / 150 (96.67 %)
+Kappa statistic: 0.9500
+Mean absolute error: 0.0221
+
+=== Metrics Summary Comparison ===
+Metric             Naive Bayes    SVM (SMO)
+Accuracy (%)       96.00 %        96.67 %
+Kappa Statistic    0.9400         0.9500
+Precision          0.9610         0.9670
+Recall             0.9600         0.9670
+F-Measure          0.9600         0.9670
+======================================================================
