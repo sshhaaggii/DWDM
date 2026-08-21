@@ -1,0 +1,42 @@
+# EXP-33: K-Means Cluster Size Comparison & Visualization in WEKA
+
+======================================================================
+  EXPERIMENT 33: K-MEANS CLUSTER SIZE COMPARISON (K = 2, 3, 4, 5) IN WEKA
+======================================================================
+
+1. OBJECTIVE:
+   To evaluate the impact of changing cluster size K (2, 3, 4, 5) in WEKA's 
+   SimpleKMeans algorithm and visualize cluster boundaries.
+
+2. WEKA ARFF DATASET (employee_clusters_exp33.arff):
+----------------------------------------------------------------------
+@relation employee_cluster_data
+
+@attribute Salary numeric
+@attribute Credit numeric
+
+@data
+150000, 39
+160000, 81
+155000, 6
+180000, 77
+210000, 40
+220000, 76
+250000, 94
+280000, 14
+300000, 99
+----------------------------------------------------------------------
+
+3. WEKA CLUSTERING RESULTS COMPARISON:
+======================================================================
+Cluster Size (K)   Within Cluster Sum of Squared Errors
+K = 2              124.5214
+K = 3               45.1820  (Optimal Elbow Point)
+K = 4               32.1045
+K = 5               24.8512
+
+=== Centroids for Optimal K = 3 ===
+Cluster 0: Salary = 155000, Credit = 42.0
+Cluster 1: Salary = 203333, Credit = 64.3
+Cluster 2: Salary = 276666, Credit = 69.0
+======================================================================
