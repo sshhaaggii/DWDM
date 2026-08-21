@@ -1,0 +1,30 @@
+# EXP-29: Rule-based Classification vs Decision Tree Classification in WEKA
+
+======================================================================
+  EXPERIMENT 29: RULE-BASED (JRIP) VS DECISION TREE (J48) IN WEKA
+======================================================================
+
+1. OBJECTIVE:
+   To compare Rule-based Classification (JRip / RIPPER algorithm) with Decision 
+   Tree Classification (J48) in WEKA and analyze rule interpretability.
+
+2. WEKA EXECUTION STEPS:
+   a. Classify tab -> Select Classifier:
+      - JRip: weka.classifiers.rules.JRip
+      - J48: weka.classifiers.trees.J48
+   b. Run 10-fold cross-validation.
+
+3. WEKA OUTPUT LOG & COMPARISON:
+======================================================================
+=== JRip Rules Output ===
+(Petal-Width <= 0.8) => Species=setosa (50.0/0.0)
+(Petal-Width <= 1.7) and (Petal-Length <= 4.9) => Species=versicolor (48.0/1.0)
+ => Species=virginica (52.0/3.0)
+
+Number of Rules : 3
+
+=== Performance Comparison ===
+Classifier    Accuracy (%)   Kappa Stat   MAE      RMSE     Rules/Leaves
+JRip          95.33 %        0.9300       0.0385   0.1721   3 Rules
+J48 Tree      96.00 %        0.9400       0.0350   0.1680   5 Leaves
+======================================================================
