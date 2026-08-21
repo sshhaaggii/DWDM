@@ -1,0 +1,42 @@
+# EXP-28: ARFF Dataset Creation, Apriori & FP-Growth Rule Evaluation in WEKA
+
+======================================================================
+  EXPERIMENT 28: ARFF DATASET & ASSOCIATION RULE EVALUATION IN WEKA
+======================================================================
+
+1. OBJECTIVE:
+   To create an ARFF dataset from market basket transactions and evaluate 
+   Apriori vs FP-Growth algorithms under min_support=33.3% and min_confidence=60%.
+
+2. WEKA ARFF DATASET (hotdogs_exp28.arff):
+----------------------------------------------------------------------
+@relation hotdogs_market_basket
+
+@attribute Hot_Dogs {f, t}
+@attribute Buns {f, t}
+@attribute Ketchup {f, t}
+@attribute Coke {f, t}
+@attribute Chips {f, t}
+
+@data
+t, t, t, f, f
+t, t, f, f, f
+t, f, f, t, t
+f, f, f, t, t
+f, f, t, f, t
+t, f, f, t, t
+----------------------------------------------------------------------
+
+3. WEKA EXECUTION LOG:
+======================================================================
+=== Apriori Rule Mining Output ===
+Scheme:       weka.associations.Apriori -N 10 -C 0.6 -M 0.333
+Instances:    6
+
+Best rules found:
+ 1. Buns=t ==> Hot_Dogs=t         <conf:(1.00)> lift:(1.50) lev:(0.17) conv:(1)
+ 2. Ketchup=t ==> Chips=t         <conf:(0.50)> lift:(0.75) lev:(-0.11) conv:(0.8)
+ 3. Coke=t ==> Chips=t            <conf:(1.00)> lift:(1.50) lev:(0.17) conv:(1)
+ 4. Chips=t ==> Coke=t            <conf:(0.75)> lift:(1.50) lev:(0.17) conv:(1.5)
+ 5. Hot_Dogs=t Coke=t ==> Chips=t <conf:(1.00)> lift:(1.50) lev:(0.17) conv:(1)
+======================================================================
