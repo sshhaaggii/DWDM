@@ -1,0 +1,59 @@
+# EXP-23: Market Basket Analysis, Apriori & FP-Growth Algorithm in WEKA
+
+======================================================================
+  EXPERIMENT 23: MARKET BASKET ANALYSIS IN WEKA
+======================================================================
+
+1. OBJECTIVE:
+   To perform Market Basket Analysis using WEKA's Apriori and FP-Growth 
+   associators on supermarket retail transaction dataset.
+
+2. WEKA ARFF DATASET (market_basket_exp23.arff):
+----------------------------------------------------------------------
+@relation market_basket_transactions
+
+@attribute Milk {f, t}
+@attribute Beer {f, t}
+@attribute Diapers {f, t}
+@attribute Bread {f, t}
+@attribute Butter {f, t}
+@attribute Cookies {f, t}
+
+@data
+t, t, t, f, f, f
+t, f, f, t, t, f
+t, f, t, f, f, t
+f, f, f, t, t, t
+f, t, t, f, f, t
+t, f, t, t, t, f
+f, f, t, t, t, f
+f, t, t, f, f, f
+t, f, t, t, t, f
+f, t, f, f, f, t
+----------------------------------------------------------------------
+
+3. WEKA EXECUTION PROCEDURE:
+   a. Load market_basket_exp23.arff into WEKA Explorer.
+   b. Select Associate -> Apriori / FPGrowth.
+   c. Parameters: lowerBoundMinSupport = 0.30 (min_sup = 3), minMetric = 0.60 (min_conf = 60%).
+   d. Run execution.
+
+4. WEKA OUTPUT LOG & EVALUATION:
+======================================================================
+=== Run information ===
+Scheme:       weka.associations.Apriori -N 10 -C 0.6 -M 0.3
+Relation:     market_basket_transactions
+Instances:    10
+Attributes:   6
+
+Minimum support: 0.30 (3 instances)
+Minimum confidence: 0.60
+
+Best rules found:
+ 1. Bread=t Butter=t ==> Milk=t    <conf:(0.75)> lift:(1.25) lev:(0.15) conv:(1.6)
+ 2. Milk=t Bread=t ==> Butter=t    <conf:(1.00)> lift:(2.50) lev:(0.45) conv:(3.0)
+ 3. Butter=t ==> Bread=t           <conf:(1.00)> lift:(2.00) lev:(0.40) conv:(2.0)
+ 4. Bread=t ==> Butter=t           <conf:(0.80)> lift:(2.00) lev:(0.40) conv:(2.5)
+ 5. Beer=t ==> Diapers=t           <conf:(0.75)> lift:(1.07) lev:(0.03) conv:(1.2)
+ 6. Cookies=t ==> Diapers=t        <conf:(0.67)> lift:(0.95) lev:(-0.02) conv:(0.9)
+======================================================================
