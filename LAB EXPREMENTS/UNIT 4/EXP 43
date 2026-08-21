@@ -1,0 +1,26 @@
+# EXP-43: Car Testing Data - Standard Deviation & Variance Analysis in WEKA
+
+======================================================================
+  EXPERIMENT 43: CAR TESTING VARIANCE & STANDARD DEVIATION IN WEKA
+======================================================================
+
+1. OBJECTIVE:
+   To calculate summary statistics (Mean, Standard Deviation, Variance) for Car 
+   Average Speed and Total Testing Time using WEKA Preprocess panel.
+
+2. WEKA PREPROCESS SUMMARY STATISTICS:
+======================================================================
+Attribute: AvgSpeed
+Mean               : 76.6667
+Standard Deviation : 10.2225
+Variance           : 104.5000
+Min                : 60.0
+Max                : 90.0
+
+Attribute: TotalTime
+Mean               : 2.5889
+Standard Deviation : 0.6234
+Variance           : 0.3886
+Min                : 1.8
+Max                : 3.8
+======================================================================
