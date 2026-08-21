@@ -1,0 +1,49 @@
+# EXP-27: Categorical Data Prediction using Decision Tree & Logistic Regression in WEKA
+
+======================================================================
+  EXPERIMENT 27: CATEGORICAL DATA PREDICTION USING WEKA
+======================================================================
+
+1. OBJECTIVE:
+   To discretize continuous data and construct Decision Tree (J48) and Logistic 
+   Regression models in WEKA for categorical species classification.
+
+2. WEKA ARFF DATASET (iris_categorical_exp27.arff):
+----------------------------------------------------------------------
+@relation iris_categorical_prediction
+
+@attribute SepalLengthCat {Short, Medium, Long}
+@attribute SepalWidthCat {Narrow, Medium, Wide}
+@attribute PetalLengthCat {Small, Medium, Large}
+@attribute PetalWidthCat {Narrow, Medium, Wide}
+@attribute Species {setosa, versicolor, virginica}
+
+@data
+Short, Medium, Small, Narrow, setosa
+Short, Narrow, Small, Narrow, setosa
+Medium, Medium, Medium, Medium, versicolor
+Long, Wide, Large, Wide, virginica
+Short, Medium, Small, Narrow, setosa
+Medium, Narrow, Medium, Medium, versicolor
+Long, Medium, Large, Wide, virginica
+----------------------------------------------------------------------
+
+3. WEKA EXECUTION STEPS:
+   a. Preprocess -> Apply Filter: weka.filters.unsupervised.attribute.Discretize
+   b. Classify -> Test J48 & Logistic Regression models.
+
+4. WEKA OUTPUT LOG & COMPARISON:
+======================================================================
+=== J48 Decision Tree Classifier Output ===
+PetalLengthCat = Small: setosa (3.0)
+PetalLengthCat = Medium: versicolor (2.0)
+PetalLengthCat = Large: virginica (2.0)
+
+Correctly Classified Instances          7               100.0000 %
+Incorrectly Classified Instances        0                 0.0000 %
+Kappa statistic                         1.0000
+
+=== Logistic Regression Model Output ===
+Loss function: Ridge value = 1.0E-8
+Correctly Classified Instances          7               100.0000 %
+======================================================================
