@@ -1,0 +1,80 @@
+# EXP-22: Apriori and FP-Growth Algorithm in WEKA
+
+======================================================================
+  EXPERIMENT 22: ASSOCIATION RULE MINING USING WEKA (APRIORI & FP-GROWTH)
+======================================================================
+
+1. OBJECTIVE:
+   To perform Association Rule Mining on Customer Transaction Data using 
+   WEKA Data Mining Software by executing Apriori and FP-Growth algorithms.
+
+2. WEKA ARFF DATASET (transactions_exp22.arff):
+----------------------------------------------------------------------
+@relation customer_transactions_exp22
+
+@attribute item_a {F, T}
+@attribute item_b {F, T}
+@attribute item_c {F, T}
+@attribute item_d {F, T}
+@attribute item_e {F, T}
+
+@data
+T, F, F, T, T
+T, T, T, F, T
+T, T, F, T, T
+T, F, T, T, T
+F, T, T, F, T
+F, T, F, T, T
+F, F, T, T, F
+T, T, T, F, F
+T, F, F, T, T
+T, T, F, F, T
+----------------------------------------------------------------------
+
+3. WEKA EXPLORER & CLI EXECUTION STEPS:
+   a. Open WEKA Explorer -> Preprocess tab -> Open file: transactions_exp22.arff
+   b. Go to Associate tab.
+   c. Choose Associate Scheme:
+      - Apriori: weka.associations.Apriori -N 10 -C 0.5 -M 0.3 -lowerBoundMinSupport 0.3
+      - FP-Growth: weka.associations.FPGrowth -N 10 -C 0.5 -M 0.3
+   d. Click Start to generate frequent itemsets and association rules.
+
+4. WEKA OUTPUT LOG & RESULTS:
+======================================================================
+=== Run information ===
+Scheme:       weka.associations.Apriori -N 10 -C 0.5 -M 0.3 -lowerBoundMinSupport 0.3
+Relation:     customer_transactions_exp22
+Instances:    10
+Attributes:   5 (item_a, item_b, item_c, item_d, item_e)
+
+Minimum support count: 3 (30%)
+Minimum confidence:    0.50 (50%)
+
+--- Frequent 1-Itemsets (L1) ---
+item_a=T : 7
+item_b=T : 6
+item_c=T : 4
+item_d=T : 5
+item_e=T : 8
+
+--- Frequent 2-Itemsets (L2) ---
+item_a=T item_d=T : 4
+item_a=T item_e=T : 6
+item_b=T item_e=T : 5
+item_c=T item_e=T : 3
+item_d=T item_e=T : 4
+
+--- Frequent 3-Itemsets (L3) ---
+item_a=T item_d=T item_e=T : 4
+
+--- FP-Growth Header Table & FP-Tree Order ---
+Ordered Items: item_e=T (8) > item_a=T (7) > item_b=T (6) > item_d=T (5) > item_c=T (4)
+
+--- Top Association Rules Found (Conf >= 50%) ---
+ 1. item_a=T item_d=T ==> item_e=T    <conf:(1)>    lift:(1.25) lev:(0.08) conv:(1)
+ 2. item_d=T item_e=T ==> item_a=T    <conf:(1)>    lift:(1.43) lev:(0.12) conv:(1)
+ 3. item_b=T ==> item_e=T             <conf:(0.83)> lift:(1.04) lev:(0.02) conv:(1.02)
+ 4. item_a=T ==> item_e=T             <conf:(0.86)> lift:(1.07) lev:(0.04) conv:(1.07)
+ 5. item_e=T ==> item_a=T             <conf:(0.75)> lift:(1.07) lev:(0.04) conv:(1.07)
+ 6. item_d=T ==> item_a=T             <conf:(0.80)> lift:(1.14) lev:(0.07) conv:(1.20)
+======================================================================
