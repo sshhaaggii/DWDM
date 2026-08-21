@@ -1,0 +1,46 @@
+# EXP-40: Decision Tree to ARFF, Rule Induction & Confusion Matrix in WEKA
+
+======================================================================
+  EXPERIMENT 40: DECISION TREE TO ARFF & RULE INDUCTION IN WEKA
+======================================================================
+
+1. OBJECTIVE:
+   To create an ARFF dataset for height/weight gender classification and induce 
+   decision rules using J48 and PART classifiers in WEKA.
+
+2. WEKA ARFF DATASET (person_gender_exp40.arff):
+----------------------------------------------------------------------
+@relation person_gender_tree
+
+@attribute Height numeric
+@attribute Weight numeric
+@attribute Gender {Male, Female}
+
+@data
+185, 75, Male
+175, 85, Male
+170, 60, Female
+182, 90, Male
+165, 55, Female
+178, 82, Male
+190, 70, Male
+160, 50, Female
+172, 65, Female
+188, 95, Male
+----------------------------------------------------------------------
+
+3. WEKA J48 OUTPUT & INDUCED RULES:
+======================================================================
+=== J48 Pruned Tree ===
+Height > 180: Male (4.0)
+Height <= 180
+|   Weight > 80: Male (2.0)
+|   Weight <= 80: Female (4.0)
+
+Induced Rules:
+ Rule 1: IF Height > 180 THEN Gender = Male
+ Rule 2: IF Height <= 180 AND Weight > 80 THEN Gender = Male
+ Rule 3: IF Height <= 180 AND Weight <= 80 THEN Gender = Female
+
+Correctly Classified Instances: 10 / 10 (100.00 %)
+======================================================================
