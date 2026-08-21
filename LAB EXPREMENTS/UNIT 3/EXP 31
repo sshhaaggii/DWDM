@@ -1,0 +1,20 @@
+# EXP-31: Association Rule Analysis, Apriori & FP-Growth Algorithm in WEKA
+
+======================================================================
+  EXPERIMENT 31: ASSOCIATION RULE ANALYSIS IN WEKA
+======================================================================
+
+1. OBJECTIVE:
+   To evaluate association rules for supermarket grocery transactions in WEKA.
+
+2. WEKA ARFF & RULES OUTPUT:
+======================================================================
+Scheme: weka.associations.FPGrowth -N 10 -C 0.6 -M 0.3
+Instances: 10
+
+Top Association Rules:
+ 1. Bread=t Butter=t ==> Milk=t   [Support=3, Conf=75%]
+ 2. Milk=t Bread=t ==> Butter=t   [Support=3, Conf=100%]
+ 3. Butter=t ==> Bread=t          [Support=4, Conf=100%]
+ 4. Beer=t ==> Diapers=t          [Support=3, Conf=75%]
+======================================================================
