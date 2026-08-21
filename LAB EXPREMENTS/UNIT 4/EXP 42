@@ -1,0 +1,32 @@
+# EXP-42: Normalization Techniques on Batsman Strike-Rates in WEKA
+
+======================================================================
+  EXPERIMENT 42: ATTRIBUTE NORMALIZATION & STANDARDIZATION IN WEKA
+======================================================================
+
+1. OBJECTIVE:
+   To apply Min-Max Normalization and Z-Score Standardization filters in WEKA 
+   on batsman strike-rates dataset.
+
+2. INPUT STRIKE-RATES: [100, 70, 60, 90, 90]
+
+3. WEKA FILTER RESULTS:
+======================================================================
+1. Min-Max Normalization (weka.filters.unsupervised.attribute.Normalize [0, 1]):
+   Min = 60, Max = 100
+   Original   Normalized
+   100     ->  1.0000
+   70      ->  0.2500
+   60      ->  0.0000
+   90      ->  0.7500
+   90      ->  0.7500
+
+2. Z-Score Standardization (weka.filters.unsupervised.attribute.Standardize):
+   Mean = 82.00, Standard Deviation = 16.4317
+   Original   Standardized
+   100     -> +1.0954
+   70      -> -0.7303
+   60      -> -1.3389
+   90      -> +0.4868
+   90      -> +0.4868
+======================================================================
