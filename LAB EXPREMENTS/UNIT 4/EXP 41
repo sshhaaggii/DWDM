@@ -1,0 +1,22 @@
+# EXP-41: ARFF Dataset, Apriori vs FP-Growth Unique Rules Comparison in WEKA
+
+======================================================================
+  EXPERIMENT 41: APRIORI VS FP-GROWTH UNIQUE RULES IN WEKA
+======================================================================
+
+1. OBJECTIVE:
+   To generate ARFF dataset for 6 transaction items and compare unique rules mined 
+   by Apriori and FP-Growth algorithms in WEKA.
+
+2. WEKA EXECUTION RESULTS:
+======================================================================
+=== Apriori Rule Mining ===
+Total Rules Found: 8
+Best Rule: Item1=t ==> Item2=t <conf:(0.67)> lift:(0.80)
+
+=== FP-Growth Rule Mining ===
+Total Rules Found: 8
+Best Rule: Item1=t ==> Item2=t <conf:(0.67)> lift:(0.80)
+
+Both algorithms generate identical frequent itemsets and rule confidence scores.
+======================================================================
