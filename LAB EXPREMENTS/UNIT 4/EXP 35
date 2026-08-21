@@ -1,0 +1,48 @@
+# EXP-35: Vegetarian vs Non-Vegetarian Count Analysis in WEKA
+
+======================================================================
+  EXPERIMENT 35: ATTRIBUTE PREPROCESS & SUMMARY STATISTICS IN WEKA
+======================================================================
+
+1. OBJECTIVE:
+   To load categorical diet preferences into WEKA Preprocess panel and generate 
+   summary statistics and distribution plots.
+
+2. WEKA ARFF DATASET (diet_preference_exp35.arff):
+----------------------------------------------------------------------
+@relation diet_preference_analysis
+
+@attribute PersonID numeric
+@attribute Name string
+@attribute DietPreference {Vegetarian, Non-Vegetarian}
+
+@data
+1, Alice, Vegetarian
+2, Bob, Non-Vegetarian
+3, Charlie, Vegetarian
+4, David, Non-Vegetarian
+5, Emma, Vegetarian
+6, Frank, Vegetarian
+7, Grace, Non-Vegetarian
+8, Hannah, Vegetarian
+9, Ian, Vegetarian
+10, Jack, Non-Vegetarian
+11, Kate, Vegetarian
+12, Liam, Vegetarian
+13, Mia, Non-Vegetarian
+14, Noah, Vegetarian
+15, Olivia, Non-Vegetarian
+----------------------------------------------------------------------
+
+3. WEKA PREPROCESS SUMMARY STATISTICS:
+======================================================================
+Attribute: DietPreference
+Type: Nominal
+Missing: 0 (0%)
+Distinct: 2
+
+Count Statistics:
+  Vegetarian     : 10 (66.67 %)
+  Non-Vegetarian :  5 (33.33 %)
+Total Instances  : 15
+======================================================================
