@@ -1,0 +1,41 @@
+# EXP-37: FP-Growth Rule Generation (Grocery Purchases Dataset) in WEKA
+
+======================================================================
+  EXPERIMENT 37: FP-GROWTH RULE MINING IN WEKA
+======================================================================
+
+1. OBJECTIVE:
+   To apply FP-Growth algorithm in WEKA on grocery transactions under 
+   min_support = 50% (3 items) and min_confidence = 75%.
+
+2. WEKA ARFF DATASET (grocery_exp37.arff):
+----------------------------------------------------------------------
+@relation grocery_purchases
+
+@attribute Bread {f, t}
+@attribute Cheese {f, t}
+@attribute Egg {f, t}
+@attribute Juice {f, t}
+@attribute Milk {f, t}
+@attribute Yogurt {f, t}
+
+@data
+t, t, t, t, f, f
+t, t, f, t, f, f
+t, f, f, f, t, t
+t, f, f, t, t, f
+f, t, f, t, t, f
+----------------------------------------------------------------------
+
+3. WEKA FP-GROWTH OUTPUT:
+======================================================================
+Scheme: weka.associations.FPGrowth -N 10 -C 0.75 -M 0.5
+Instances: 5
+
+FP-Tree Ordered Items: Juice (4) > Bread (4) > Cheese (3) > Milk (3)
+
+Best Rules Found:
+ 1. Cheese=t ==> Juice=t   <conf:(1.00)> lift:(1.25)
+ 2. Milk=t ==> Juice=t     <conf:(0.67)> lift:(0.83)
+ 3. Juice=t ==> Bread=t    <conf:(0.75)> lift:(0.94)
+======================================================================
