@@ -1,0 +1,31 @@
+# EXP-39: Student Exam Marks Partitioning (Equi-depth, Equi-width, Clustering) in WEKA
+
+======================================================================
+  EXPERIMENT 39: DATA DISCRETIZATION & CLUSTERING IN WEKA
+======================================================================
+
+1. OBJECTIVE:
+   To partition student exam marks into 3 bins using Equal-Width Discretization, 
+   Equal-Frequency Discretization, and K-Means Clustering filters in WEKA.
+
+2. INPUT EXAM MARKS DATASET:
+   [50, 55, 55, 55, 58, 59, 60, 61, 63, 63, 65, 65, 67, 71, 71, 72, 75]
+
+3. WEKA FILTER OUTPUTS:
+======================================================================
+(a) Equal-Frequency Discretization (weka.filters.unsupervised.attribute.Discretize -F -B 3):
+    Bin 1 [50 to 58]   : 50, 55, 55, 55, 58, 59 (Count: 6)
+    Bin 2 (58 to 65]   : 60, 61, 63, 63, 65, 65 (Count: 6)
+    Bin 3 (65 to 75]   : 67, 71, 71, 72, 75     (Count: 5)
+
+(b) Equal-Width Discretization (weka.filters.unsupervised.attribute.Discretize -B 3):
+    Width = (75 - 50) / 3 = 8.333
+    Bin 1 [50 to 58.33]   : 50, 55, 55, 55, 58     (Count: 5)
+    Bin 2 (58.33 to 66.67]: 59, 60, 61, 63, 63, 65, 65 (Count: 7)
+    Bin 3 (66.67 to 75]   : 67, 71, 71, 72, 75     (Count: 5)
+
+(c) K-Means Clustering (SimpleKMeans k=3):
+    Cluster 0 Centroid: 54.60
+    Cluster 1 Centroid: 63.14
+    Cluster 2 Centroid: 72.20
+======================================================================
