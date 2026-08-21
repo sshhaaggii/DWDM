@@ -1,0 +1,56 @@
+# EXP-26: WEKA Apriori & FP-Growth Algorithm (MONKEY/DONKEY Dataset)
+
+======================================================================
+  EXPERIMENT 26: WEKA APRIORI & FP-GROWTH (MONKEY/DONKEY DATASET)
+======================================================================
+
+1. OBJECTIVE:
+   To evaluate Apriori and FP-Growth rule generation in WEKA on the MONKEY/DONKEY 
+   transaction dataset with support count = 2 (40%) and confidence = 80%.
+
+2. WEKA ARFF DATASET (monkey_donkey_exp26.arff):
+----------------------------------------------------------------------
+@relation monkey_donkey_transactions
+
+@attribute M {f, t}
+@attribute O {f, t}
+@attribute N {f, t}
+@attribute K {f, t}
+@attribute E {f, t}
+@attribute Y {f, t}
+@attribute D {f, t}
+@attribute A {f, t}
+@attribute U {f, t}
+@attribute C {f, t}
+@attribute I {f, t}
+
+@data
+t, t, t, t, t, t, f, f, f, f, f
+f, t, t, t, t, t, t, f, f, f, f
+t, f, f, t, t, f, f, t, f, f, f
+t, f, f, t, f, t, f, f, t, t, f
+f, t, f, t, t, f, f, f, f, t, t
+----------------------------------------------------------------------
+
+3. WEKA EXECUTION & LOG OUTPUT:
+======================================================================
+=== Run information ===
+Scheme:       weka.associations.FPGrowth -N 10 -C 0.8 -M 0.4
+Relation:     monkey_donkey_transactions
+Instances:    5
+
+Minimum support: 0.40 (2 instances)
+Minimum confidence: 0.80
+
+Frequent 1-itemsets:
+K: 5, E: 4, O: 3, M: 3, Y: 3, N: 2
+
+FP-Tree Ordered Items: K (5) > E (4) > O (3) > M (3) > Y (3) > N (2)
+
+Best rules found:
+ 1. O=t K=t ==> E=t       <conf:(1.00)> lift:(1.25) lev:(0.20)
+ 2. N=t K=t ==> E=t       <conf:(1.00)> lift:(1.25) lev:(0.20)
+ 3. N=t E=t ==> O=t       <conf:(1.00)> lift:(1.67) lev:(0.27)
+ 4. M=t E=t ==> K=t       <conf:(1.00)> lift:(1.00) lev:(0.00)
+ 5. Y=t K=t ==> E=t       <conf:(0.67)> lift:(0.83) lev:(-0.13)
+======================================================================
