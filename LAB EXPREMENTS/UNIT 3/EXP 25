@@ -1,0 +1,57 @@
+# EXP-25: Linear Regression and Multiple Regression in WEKA
+
+======================================================================
+  EXPERIMENT 25: LINEAR REGRESSION AND MULTIPLE REGRESSION IN WEKA
+======================================================================
+
+1. OBJECTIVE:
+   To apply Linear Regression and Multiple Linear Regression on the Diabetes 
+   dataset in WEKA to model continuous target variables (Glucose / BMI).
+
+2. WEKA ARFF DATASET (diabetes_regression_exp25.arff):
+----------------------------------------------------------------------
+@relation diabetes_patient_data
+
+@attribute Age numeric
+@attribute BloodPressure numeric
+@attribute BMI numeric
+@attribute Insulin numeric
+@attribute Glucose numeric
+
+@data
+25, 68, 22.5, 80, 95
+38, 74, 28.1, 115, 110
+45, 80, 31.4, 140, 132
+52, 85, 33.8, 165, 148
+29, 70, 24.2, 90, 102
+61, 88, 35.6, 180, 165
+34, 72, 26.8, 105, 108
+48, 82, 30.5, 150, 138
+22, 64, 21.0, 75, 88
+57, 86, 34.2, 175, 155
+----------------------------------------------------------------------
+
+3. WEKA EXECUTION STEPS:
+   a. Classify tab -> Choose Classifier: weka.classifiers.functions.LinearRegression
+   b. Select Target Attribute: Glucose
+   c. Click Start.
+
+4. WEKA OUTPUT LOG & REGRESSION MODELS:
+======================================================================
+=== Linear Regression Model Output ===
+Glucose =
+      0.9241 * Age +
+      1.1458 * BMI +
+      0.4125 * BloodPressure +
+     38.1542
+
+Time taken to build model: 0.01 seconds
+
+=== Evaluation Result ===
+Correlation coefficient                  0.9854
+Mean absolute error                      3.1425
+Root mean squared error                  4.0218
+Relative absolute error                 12.4518 %
+Root relative squared error             14.1205 %
+Total Number of Instances               10
+======================================================================
